@@ -20,14 +20,14 @@ export const GroupsTable = observer(function GroupsTable({ onEdit }: GroupsTable
       title: 'Delete Group',
       icon: <ExclamationCircleOutlined />,
       content: (
-        <Descriptions column={1} size="small" style={{ marginTop: 16 }}>
+        <Descriptions column={1} size="small" className="confirm-descriptions">
           <Descriptions.Item label="Name">{group.name}</Descriptions.Item>
           <Descriptions.Item label="Description">
-            {group.description || <span style={{ color: '#999' }}>—</span>}
+            {group.description || <span className="text-muted">—</span>}
           </Descriptions.Item>
           <Descriptions.Item label="Tags">
             {group.tags.length === 0 ? (
-              <span style={{ color: '#999' }}>None</span>
+              <span className="text-muted">None</span>
             ) : (
               <Space size={[0, 4]} wrap>
                 {group.tags.map((tag) => (
@@ -67,7 +67,7 @@ export const GroupsTable = observer(function GroupsTable({ onEdit }: GroupsTable
       key: 'tags',
       render: (_, record) =>
         record.tags.length === 0 ? (
-          <span style={{ color: '#999' }}>—</span>
+          <span className="text-muted">—</span>
         ) : (
           <Space size={[0, 4]} wrap>
             {record.tags.map((tag) => (

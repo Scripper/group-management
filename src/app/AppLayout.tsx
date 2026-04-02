@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { UserOutlined, TeamOutlined } from '@ant-design/icons';
+import { UserOutlined, TeamOutlined, AppstoreOutlined } from '@ant-design/icons';
 import { useStore } from '@/store/StoreContext';
 
 const { Sider, Content } = Layout;
@@ -26,22 +26,30 @@ export function AppLayout() {
     navigate(key);
   };
 
+  // Match the active menu key even for unknown sub-paths
+  const selectedKey = NAV_ITEMS.find((item) =>
+    location.pathname.startsWith(item.key),
+  )?.key;
+
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider breakpoint="lg" collapsedWidth={80}>
-        <div style={{ height: 32, margin: 16, color: '#fff', fontWeight: 600, fontSize: 16, textAlign: 'center' }}>
-          Management
+    <Layout className="app-layout">
+      <Sider breakpoint="lg" collapsedWidth={80} width={220}>
+        <div className="sidebar-logo">
+          <AppstoreOutlined className="sidebar-logo-icon" />
+          <Typography.Text strong className="sidebar-logo-text">
+            Management
+          </Typography.Text>
         </div>
         <Menu
           theme="dark"
           mode="inline"
-          selectedKeys={[location.pathname]}
+          selectedKeys={selectedKey ? [selectedKey] : []}
           items={NAV_ITEMS}
           onClick={handleMenuClick}
         />
       </Sider>
       <Layout>
-        <Content style={{ margin: 24 }}>
+        <Content className="app-content">
           <Outlet />
         </Content>
       </Layout>

@@ -30,12 +30,12 @@ export const UsersTable = observer(function UsersTable({ onEdit }: UsersTablePro
       title: 'Delete User',
       icon: <ExclamationCircleOutlined />,
       content: (
-        <Descriptions column={1} size="small" style={{ marginTop: 16 }}>
+        <Descriptions column={1} size="small" className="confirm-descriptions">
           <Descriptions.Item label="Full Name">{fullName(user)}</Descriptions.Item>
           <Descriptions.Item label="Email">{user.email}</Descriptions.Item>
           <Descriptions.Item label="Groups">
             {groups.length === 0 ? (
-              <span style={{ color: '#999' }}>None</span>
+              <span className="text-muted">None</span>
             ) : (
               <Space size={[0, 4]} wrap>
                 {groups.map((name) => (
@@ -73,7 +73,7 @@ export const UsersTable = observer(function UsersTable({ onEdit }: UsersTablePro
       key: 'groups',
       render: (_, record) =>
         record.groupIds.length === 0 ? (
-          <span style={{ color: '#999' }}>—</span>
+          <span className="text-muted">—</span>
         ) : (
           <Space size={[0, 4]} wrap>
             {record.groupIds.map((gid) => (

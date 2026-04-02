@@ -6,6 +6,89 @@ body,
   padding: 0;
 }
 
+/* ── Layout ────────────────────────────────────────────── */
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 64px;
+  margin: 0 0 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-logo-icon {
+  font-size: 22px;
+  color: #1890ff;
+}
+
+.sidebar-logo-text {
+  color: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.app-content {
+  margin: 24px;
+}
+
+/* ── Page common ───────────────────────────────────────── */
+
+.page-loading-spinner {
+  margin-top: 64px;
+}
+
+.page-loading-placeholder {
+  min-height: 200px;
+}
+
+.page-header {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  margin: 0 !important;
+}
+
+/* ── Filters ───────────────────────────────────────────── */
+
+.filters-bar {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.filter-search-input {
+  width: 260px;
+}
+
+.filter-select {
+  width: 200px;
+}
+
+.groups-search-input {
+  width: 320px;
+  margin-bottom: 16px;
+}
+
+/* ── Shared text ───────────────────────────────────────── */
+
+.text-muted {
+  color: #999;
+}
+
+/* ── Confirm modal ─────────────────────────────────────── */
+
+.confirm-descriptions {
+  margin-top: 16px;
+}
+
 /* ── Table styling ─────────────────────────────────────── */
 
 .ant-table-wrapper .ant-table {
@@ -38,4 +121,3 @@ body,
 .ant-pagination-options-quick-jumper input {
   width: 50px;
 }
-

@@ -58,18 +58,16 @@ export const GroupsPage = observer(function GroupsPage() {
 
   if (groupStore.loading && groupStore.groups.length === 0) {
     return (
-      <Spin tip="Loading groups…" size="large" style={{ marginTop: 64 }}>
-        <div style={{ minHeight: 200 }} />
+      <Spin tip="Loading groups…" size="large" className="page-loading-spinner">
+        <div className="page-loading-placeholder" />
       </Spin>
     );
   }
 
   return (
     <>
-      <Space
-        style={{ width: '100%', justifyContent: 'space-between', marginBottom: 16 }}
-      >
-        <Typography.Title level={2} style={{ margin: 0 }}>
+      <Space className="page-header">
+        <Typography.Title level={2} className="page-title">
           Groups
         </Typography.Title>
         <Button type="primary" icon={<PlusOutlined />} onClick={openCreate}>

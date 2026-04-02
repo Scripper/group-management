@@ -13,7 +13,7 @@ export const GroupsSearch = observer(function GroupsSearch() {
       allowClear
       value={groupStore.searchQuery}
       onChange={(e) => groupStore.setSearchQuery(e.target.value)}
-      style={{ width: 320, marginBottom: 16 }}
+      className="groups-search-input"
     />
   );
 });
