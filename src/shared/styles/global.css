@@ -1,0 +1,34 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Table pagination bar ─────────────────────────────── */
+
+/* Push the pagination to the right and give it breathing room */
+.ant-table-pagination.ant-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px !important;
+  padding: 12px 16px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+/* "Showing X–Y of Z" label pushed to the far left */
+.pagination-total {
+  color: #595959;
+  font-size: 13px;
+  margin-right: auto;
+}
+
+/* Tighten up the quick-jumper input */
+.ant-pagination-options-quick-jumper input {
+  width: 50px;
+}
+
